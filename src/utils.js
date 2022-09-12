@@ -1,26 +1,25 @@
 var multer = require('multer');
-multer.diskStorage()
 
-var storage = multer.diskStorage({
-    destination: (req,res,callBack)=>{
-        callBack(null,'./../public/')
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        // console.log(__dirname+'../public/images/')
+      cb(null, './public/images/')
     },
-    filename: (req,file,callBack)=>{
-        callBack(null,Date.now()+'_'+file.originalname)
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, file.fieldname + '-' + uniqueSuffix+'.'+file.mimetype.split('/')[1])
     }
-})
-
-var multipartHandlerInstance = multer({
-    storage: storage,
-})
-
+  })
+  
+  const upload = multer({ storage: storage })
+  
 
 
-const slugify = (slug='ok')=>{
+const slugify = (slug)=>{
     return slug.split(' ').join('_')
 }
 
 module.exports ={
     slugify,
-    multipartHandlerInstance
+    upload
 }

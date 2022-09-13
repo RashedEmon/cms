@@ -3,10 +3,10 @@
         <div class="text-center card border-0 fs-3 p-2 bg-secondary bg-opacity-10">Create Post</div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
-          <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input required type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="input-group mb-3">
-            <select name="category" class="form-select" id="inputGroupSelect02">
+            <select required name="category" class="form-select" id="inputGroupSelect02">
               <option selected>Choose...</option>
               <% if(categories){ categories.forEach((category)=>{ %> 
                 <option value="<%= category.title %>"><%= category.title %></option>
@@ -16,13 +16,12 @@
           </div>
           <div class="mb-3">
             <label for="formFile" class="form-label">Image</label>
-            <input name="image" class="form-control" type="file" id="formFile">
+            <input required name="image" class="form-control" type="file" id="formFile">
           </div>
-          <div class="form-floating">
-            <textarea name="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Descriptions</label>
-          </div>
+          <textarea required id="editor" name="description">rich html editor</textarea>
         
         <button type="submit" class="btn btn-primary bg-dark">Submit</button>
     </form>
+
+    
 </div>

@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<% const day=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
+<% const month=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %>  
 <body>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-10 col-lg-8">
-                <img src="/<%- posts.image %> " class="img-fluid" alt="Responsive image" width="100%">
+                <img src="/<%- posts.image %> " class="img-fluid" alt="Responsive image" width="100%" height="100%" >
             </div>
             <div class="px-5">
                <h1 class="px-3 py-5"><%= posts.title %> </h1>
-               <h4><%= posts.timestamp %> </h4>
-               <p>
-                    <%= posts.description %> 
-               </p>
+               <h4><%= new Date(posts.timestamp).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric',second: 'numeric', hour12: true })  %>  <%= "  " %>    <%= day[new Date(posts.timestamp).getDay()] %> <%= month[new Date(posts.timestamp).getMonth()]  %>  <%= new Date(posts.timestamp).getFullYear()  %> </h4>
+               <div>
+                    <%- posts.description %> 
+               </div>
             </div>
         </div>
     </div>

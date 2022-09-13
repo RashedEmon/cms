@@ -8,7 +8,7 @@
         <% } %> 
 
         <% if(posts){  posts.forEach((post)=>{%> 
-            <li class="list-group-item"><%= post.title %>  </li>
+            <li class="list-group-item text-capitalize"><%= post.title %>  </li>
             <% })%>
                 
             <%}else if(posts !== undefined){ %>

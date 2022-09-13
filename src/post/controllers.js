@@ -4,13 +4,12 @@ const {post} = require('./models')
 
 
 const getPostBySlug = async(req,res,next)=>{
-    console.log('slug')
     const {slug}=req.params
     let posts;
     if(slug){
         try{
             posts=await post.find({slug: slug}).limit(1)
-            console.log(posts)
+            // console.log(posts)
         }catch{
             console.log('error happend')
             res.status(500)
@@ -30,7 +29,7 @@ const getPostsByCategory = async(req,res,next)=>{
     let posts=[]
     if(category){
         try{
-            posts=await post.find({category: category}).limit(7)
+            posts=await post.find({category: category})
         }catch{
             res.status(500)
             res.send('server error')

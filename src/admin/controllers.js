@@ -14,7 +14,6 @@ const createPostByAdmin = async(req,res)=>{
     const newPost = new post(obj)
     try{
         const data=await newPost.save()
-        console.log(data)
     }catch{
         console.log('error happend while post post data')
     }
@@ -23,14 +22,12 @@ const createPostByAdmin = async(req,res)=>{
 }
 //recieve category data and insert to database route: host/admin/category
 const createCategoryByAdmin = async(req,res)=>{
-    console.log(req.body)
     let obj={
         ...req.body,
         timestamp: new Date(),
         slug: slugify(req.body.title),
         image: `images/${req.file.filename}`
     }
-    console.log(obj)
     const newCategory = new category(obj)
     let categories=[]
     try{

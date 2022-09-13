@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post by category</title>
+    <title>Posts</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-10 col-lg-8">
-                <div style="width: 100%; ">
-                    <h1 class="text-center"><%= posts[0].category %> </h1>
+            <div class="col-12 col-md-10 col-lg-8 p-5">
+                <div style="width: 100%;" class="px-5">
+                    <h1 style="text-transform: capitalize; text-align: center;" class=" text-capitalize"><%= posts[0].category %> </h1>
                     <div style="display: flex;flex-wrap: wrap;">
 
                         <% if(posts){ %>

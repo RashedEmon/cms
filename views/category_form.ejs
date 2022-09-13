@@ -1,13 +1,13 @@
 <div class="col-12 col-md-10 col-lg-6 mx-auto my-5">
-    <form class="bg-danger bg-opacity-10 p-3">
+    <form class="bg-danger bg-opacity-10 p-3" action="/admin/category/" method="post" enctype="multipart/form-data">
         <div class="text-center card border-0 fs-3 p-2 bg-secondary bg-opacity-10">Create Category</div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Image</label>
-            <input class="form-control" type="file" id="formFile">
+            <input required class="form-control" type="file" id="formFile" name="image">
           </div>
         <button type="submit" class="btn btn-primary bg-dark">Submit</button>
     </form>

@@ -3,7 +3,7 @@ const getCategory = (req,res)=>{
     res.send("get category")
 }
 
-const createCategory = (req,res)=>{
-    console.log(req.body)
-    res.send('category post')
+
+module.exports = {
+    getCategory,
 }

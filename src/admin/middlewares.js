@@ -1,6 +1,5 @@
 var multer = require('multer');
 
-
 const allowedHttpVerbs = (verbs=[])=>{
     let httpVerbs = new Set(verbs.map(item => item.toUpperCase()))
 
@@ -15,8 +14,7 @@ const allowedHttpVerbs = (verbs=[])=>{
     }
 }
 
-
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         // console.log(__dirname+'../public/images/')
       cb(null, './public/images/')
@@ -27,10 +25,9 @@ const storage = multer.diskStorage({
     }
   })
   
-  const upload = multer({ storage: storage })
+var upload = multer({ storage: storage })
 
 module.exports = {
     allowedHttpVerbs,
     upload
 }
-

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post by category</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div style="width: 100%; ">
+                    <h1 class="text-center"><%= posts[0].category %> </h1>
+                    <div style="display: flex;flex-wrap: wrap;">
+
+                        <% if(posts){ %>
+                            <% posts.forEach((post)=>{%>
+                                <div class="card" style="width: 10rem; display: inline-block; margin: 2rem;">
+                                    <img src="/<%- post.image %> " width="100%" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h4 class="card-title"><a style="text-decoration: none;color: black;" href="/post/<%- post.slug %> "><%= post.title %></a> </h4>
+                                    </div>
+                                </div>
+                            <% })%>
+                        <% } %>   
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

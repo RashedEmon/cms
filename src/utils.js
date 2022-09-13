@@ -16,6 +16,9 @@ const storage = multer.diskStorage({
 
 
 const slugify = (slug)=>{
+  if(!slug){
+    return ''
+  }
     return slug.split(' ').join('_')
 }
 

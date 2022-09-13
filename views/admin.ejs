@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Admin Dashboard</a>
+              <a class="navbar-brand" href="/admin">Admin Dashboard</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -54,10 +54,10 @@
 
           <% if(page === 'post'){ %>
             <div class="row">
-              <%- include('./post_form.ejs',{}) %>  
+              <%- include('./post_form.ejs',{categories: categories,posts: []}) %>  
             </div>
             <div class="row">
-              <%- include('./list_items.ejs',{page: 'Post'}) %>  
+              <%- include('./list_items.ejs',{page: 'Post', posts: posts, categories: undefined}) %>  
             </div>
             <% } %> 
 
@@ -67,7 +67,7 @@
               <%- include('./category_form.ejs',{}) %>  
             
             <div class="row">
-              <%- include('./list_items.ejs',{page: 'Category'}) %>  
+              <%- include('./list_items.ejs',{page: 'Category', categories: categories, posts: undefined}) %>  
             </div>
           <% } %>
     </div>

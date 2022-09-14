@@ -3,13 +3,13 @@ This is a content management system. User can see posts, category and also can s
 
 #technologies used in this project
 <div>
-  Nodejs
-Expressjs
-Multer(handle multipart)
-BodyParser (handle json and multipart)
-MongoDB
-Mongoose (manage database connection, query, model creation etc.)
-Dotenv (Set and get data to/from environment variable.)
-Ejs (Template engine)  
+  Nodejs <br>
+Expressjs <br>
+Multer(handle multipart) <br>
+BodyParser (handle json and multipart) <br>
+MongoDB <br>
+Mongoose (manage database connection, query, model creation etc.) <br>
+Dotenv (Set and get data to/from environment variable.) <br>
+Ejs (Template engine)  <br>
 </div>
 

@@ -1,9 +1,22 @@
 # Content Management System
 This is a content management system. User can see posts, category and also can see post by category and details of post. Admin can add post,add category in this system.
 
-#technologies used in this project
+#Install and use the project
 <div>
-  Nodejs <br>
+  Clone the repository: <br>
+  <code> git clone https://github.com/RashedEmon/cms.git </code> <br>
+  Change directioy to root of the project.<br>
+  <code>cd cms </code> <br>
+  Install dependencies:<br>
+  <code>npm install</code> <br>
+  Run the application: <br>
+  <code>npm start</code>
+</div>
+
+
+#Technologies used in this project
+<div>
+Nodejs <br>
 Expressjs <br>
 Multer(handle multipart) <br>
 BodyParser (handle json and multipart) <br>

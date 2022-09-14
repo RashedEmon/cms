@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const {post} = require('./src/post/models')
 const {category} = require('./src/category/models')
 const {admin_route} = require('./src/admin/routes')
+const {categoryRoute} = require('./src/category/routers')
 require('dotenv').config()
 
 
@@ -67,6 +68,7 @@ app.set('views',path.join(__dirname,'views'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(router)
+app.use(categoryRoute)
 app.use(postRoute)
 app.use(admin_route)
 }
